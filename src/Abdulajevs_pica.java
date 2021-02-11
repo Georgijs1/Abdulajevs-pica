@@ -109,9 +109,29 @@ public class Abdulajevs_pica{
 	    			}catch(Exception e){
 	    				JOptionPane.showMessageDialog(null, "Kļūme nolasot failu!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 	    			}
+	        		JOptionPane.showMessageDialog(null, "Paldies par Jūsu pasūtījumu!");
+	        		UIManager.put("OptionPane.yesButtonText", "Labi");
+	    			UIManager.put("OptionPane.noButtonText", "Slikti");
+	        		int novertet = JOptionPane.showConfirmDialog(null, "Kā Jūs novērtēsiet mūsu apkalpošanu?", "Vērtēšana", JOptionPane.YES_NO_OPTION);  
+	        		if(novertet==JOptionPane.YES_OPTION){
+	        			JOptionPane.showMessageDialog(null, "Paldies par atsauksmi!");
+	        		}if(novertet==JOptionPane.NO_OPTION){
+	        			JOptionPane.showInputDialog("Kas tieši Jums nepatika?");	        	
+	        			JOptionPane.showMessageDialog(null, "Labi, mēģināsim šo problemu risināt!");
+	        		}
+	        	
 	        	}if(apskatit == JOptionPane.NO_OPTION){
 	        		JOptionPane.showMessageDialog(null, "Paldies par Jūsu pasūtījumu!");
-	        }
+	        		UIManager.put("OptionPane.yesButtonText", "Labi");
+	    			UIManager.put("OptionPane.noButtonText", "Slikti");
+	        		int novertet = JOptionPane.showConfirmDialog(null, "Kā Jūs novērtēsiet mūsu apkalpošanu?", "Vērtēšana", JOptionPane.YES_NO_OPTION);  
+	        		if(novertet==JOptionPane.YES_OPTION){
+	        			JOptionPane.showMessageDialog(null, "Paldies par atsauksmi!");
+	        		}if(novertet==JOptionPane.NO_OPTION){
+	        			JOptionPane.showInputDialog("Kas tieši Jums nepatika?");	 
+	        			JOptionPane.showMessageDialog(null, "Labi, mēģināsim šo problemu risināt!");
+	        		}
+	        	}  
 	}
 	
 	public static void uzvietas() throws Exception{
@@ -183,7 +203,8 @@ public class Abdulajevs_pica{
 			UIManager.put("OptionPane.noButtonText", "Nē");
 	        int apskatit = JOptionPane.showConfirmDialog(null, "Vai velaties apskatīties Jūsu pasūtījumu?", "Pasūtījums", JOptionPane.YES_NO_OPTION);  
 	        
-	        	if(apskatit== JOptionPane.YES_OPTION){
+	        	if(apskatit==JOptionPane.YES_OPTION){
+	        	
 	        		try{
 	    				
 	    				FileReader fr = new FileReader("Pasutijums.txt");
@@ -197,8 +218,28 @@ public class Abdulajevs_pica{
 	    			}catch(Exception e){
 	    				JOptionPane.showMessageDialog(null, "Kļūme nolasot failu!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 	    			}
+	        		JOptionPane.showMessageDialog(null, "Paldies par Jūsu pasūtījumu!");
+	        		UIManager.put("OptionPane.yesButtonText", "Labi");
+	    			UIManager.put("OptionPane.noButtonText", "Slikti");
+	        		int novertet = JOptionPane.showConfirmDialog(null, "Kā Jūs novērtēsiet mūsu apkalpošanu?", "Vērtēšana", JOptionPane.YES_NO_OPTION);  
+	        		if(novertet==JOptionPane.YES_OPTION){
+	        			JOptionPane.showMessageDialog(null, "Paldies par atsauksmi!");
+	        		}if(novertet==JOptionPane.NO_OPTION){
+	        			JOptionPane.showMessageDialog(null, "Kas tieši Jums nepatika?", "Jautājums", JOptionPane.QUESTION_MESSAGE);
+	        			JOptionPane.showMessageDialog(null, "Labi, mēģināsim šo problemu risināt!");
+	        		}
+
 	        	}if(apskatit == JOptionPane.NO_OPTION){
 	        		JOptionPane.showMessageDialog(null, "Paldies par Jūsu pasūtījumu!");
+	        		UIManager.put("OptionPane.yesButtonText", "Labi");
+	    			UIManager.put("OptionPane.noButtonText", "Slikti");
+	        		int novertet = JOptionPane.showConfirmDialog(null, "Kā Jūs novērtēsiet mūsu apkalpošanu?", "Vērtēšana", JOptionPane.YES_NO_OPTION);  
+	        		if(novertet==JOptionPane.YES_OPTION){
+	        			JOptionPane.showMessageDialog(null, "Paldies par atsauksmi!");
+	        		}if(novertet==JOptionPane.NO_OPTION){
+	        			JOptionPane.showInputDialog("Kas tieši Jums nepatika?");	 
+	        			JOptionPane.showMessageDialog(null, "Labi, mēģināsim šo problemu risināt!");
+	        		}
 	        	}
         	}
 	
