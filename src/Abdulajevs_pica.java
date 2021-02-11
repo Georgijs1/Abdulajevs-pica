@@ -13,7 +13,7 @@ public class Abdulajevs_pica{
 	
 	public static void majas() throws Exception{
 		String uzvards, talrunis, adrese;
-		double attalums=0, piegadesmaksa=0, izmeracena=0, tipacena=0;
+		double attalums=0, piegadesmaksa=0, izmeracena=0, tipacena=0, mercescena=0;
 		
 		JOptionPane.showMessageDialog(null, "Jūs izvēlaties piegādi uz māju.");
 		uzvards = (JOptionPane.showInputDialog("Ievadiet savu uzvārdu: "));
@@ -33,7 +33,8 @@ public class Abdulajevs_pica{
         		piegadesmaksa = 1.50;
         	}
         
-        int picastips = JOptionPane.showOptionDialog(new JFrame(), "Kāda izmēra picu Jūs vēlaties piegādāties?", "Picas izmērs", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Ananāsu", "Peperoni", "Sēņu", "Veģetārā"}, JOptionPane.YES_OPTION);
+        int picastips = JOptionPane.showOptionDialog(new JFrame(), "Kāda izmēra picu Jūs vēlaties piegādāties?", "Picas izmērs", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+        		null, new Object[] {"Ananāsu", "Peperoni", "Sēņu", "Veģetārā"}, JOptionPane.YES_OPTION);
 
         	if(picastips==JOptionPane.YES_OPTION){
         		tipacena=5.50;
@@ -45,7 +46,8 @@ public class Abdulajevs_pica{
         		tipacena=4.00;
         	}
         
-        int izmers = JOptionPane.showOptionDialog(new JFrame(), "Kāda izmēra picu Jūs vēlaties piegādāties?", "Picas izmērs", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"25cm", "30cm", "50cm"}, JOptionPane.YES_OPTION);
+        int izmers = JOptionPane.showOptionDialog(new JFrame(), "Kāda izmēra picu Jūs vēlaties piegādāties?", "Picas izmērs", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+        		null, new Object[] {"25cm", "30cm", "50cm"}, JOptionPane.YES_OPTION);
         	
         	if(izmers==JOptionPane.YES_OPTION){
         		izmeracena = tipacena * 0.2;
@@ -53,8 +55,19 @@ public class Abdulajevs_pica{
         		izmeracena = tipacena * 0.4;
         	}else if(izmers==JOptionPane.OK_OPTION){
         		izmeracena = tipacena * 0.6;
-        	}   
-        
+        	} 
+        	
+        	int merce = JOptionPane.showOptionDialog(new JFrame(), "Vai velaties piegādāties papildus mērci?", "Papildus mērce", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+            		null, new Object[] {"Ketčups", "Sinapju", "Majonēze"}, JOptionPane.YES_OPTION);
+        	
+        	if(izmers==JOptionPane.YES_OPTION){
+        		mercescena = 0.60;
+        	}else if(izmers==JOptionPane.NO_OPTION){
+        		mercescena = 0.80;
+        	}else if(izmers==JOptionPane.OK_OPTION){
+        		mercescena = 1.00;
+        	} 
+        	
 			try{
 			
 				FileWriter fw = new FileWriter("Pasutijums.txt", true);
@@ -67,7 +80,9 @@ public class Abdulajevs_pica{
 				raksta.println("Klienta tālrunis: "+talrunis);
 				raksta.println("Jūsu piegādes maksa būs: "+df.format(piegadesmaksa)+" euro");
 				raksta.println("Jūsu picas izmērs: "+izmers);
-				raksta.println("Cēna par izmēru: ");
+				raksta.println("Cēna par izmēru: "+izmeracena);
+				raksta.println("Jūsu mērce: "+merce);
+				raksta.println("Cēna par mērci: "+mercescena);
 			
 				JOptionPane.showMessageDialog(null, "Jūsu pasūtījums tiek saņemts!");
 				raksta.close();
