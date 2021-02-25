@@ -15,7 +15,7 @@ public class Abdulajevs_pica{
 	
 	public static void majas() throws Exception{
 		String uzvards, talrunis, adrese, teksts;
-		double piegadesmaksa=0, izmeracena=0, tipacena=0, mercescena=0, summa;
+		double piegadesmaksa=0, izmeracena=0, tipacena=0, mercescena=0, summa, dzeramaiscena=0;
 		
 		JOptionPane.showMessageDialog(null, "Jūs izvēlaties piegādi uz māju.");
 		uzvards = (JOptionPane.showInputDialog("Ievadiet savu uzvārdu: "));
@@ -64,7 +64,16 @@ public class Abdulajevs_pica{
         		mercescena = mercescena + 0.80;
         	}
         	
-        	summa=tipacena+izmeracena+mercescena+piegadesmaksa;
+        	int dzeramais = JOptionPane.showOptionDialog(new JFrame(), "Vai velaties kaut ko padzerties?", "Dzēriens", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+            		null, new Object[] {"Cola", "Fanta"}, JOptionPane.YES_OPTION);
+        	
+        	if(izmers==JOptionPane.YES_OPTION){
+        		dzeramaiscena = dzeramaiscena + 1.00;
+        	}else if(izmers==JOptionPane.NO_OPTION){
+        		dzeramaiscena = dzeramaiscena + 1.10;
+        	}
+        	
+        	summa=tipacena+izmeracena+mercescena+piegadesmaksa+dzeramaiscena;
         			
 			try{
 			
@@ -81,6 +90,7 @@ public class Abdulajevs_pica{
 				raksta.println("Jūsu picas cena: "+tipacena);
 				raksta.println("Сena par Jūsu izvēlēto picas izmēru izmēru: "+izmeracena);
 				raksta.println("Jūsu mērces cena: "+mercescena);
+				raksta.println("Jūsu dzēriena cena: "+dzeramaiscena);
 				raksta.println("Jūsu piegādes maksa būs: "+df.format(piegadesmaksa)+" euro");
 				raksta.println("Cena kopā: "+df.format(summa)+" eiro");	
 			
@@ -136,7 +146,7 @@ public class Abdulajevs_pica{
 	
 	public static void uzvietas() throws Exception{
 		String uzvards, talrunis, teksts;
-		double izmeracena=0, tipacena=0, mercescena=0, summa;
+		double izmeracena=0, tipacena=0, mercescena=0, summa, dzeramaiscena=0;
 		
 		JOptionPane.showMessageDialog(null, "Jūs izvēlaties piegādi uz vietas, picerījā.");
 		uzvards = (JOptionPane.showInputDialog("Ievadiet savu uzvārdu: "));
@@ -174,7 +184,16 @@ public class Abdulajevs_pica{
         		mercescena = mercescena + 0.80;
         	}
         	
-        	summa=tipacena+izmeracena+mercescena;
+        	int dzeramais = JOptionPane.showOptionDialog(new JFrame(), "Vai velaties kaut ko padzerties?", "Dzēriens", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+            		null, new Object[] {"Cola", "Fanta"}, JOptionPane.YES_OPTION);
+        	
+        	if(izmers==JOptionPane.YES_OPTION){
+        		dzeramaiscena = dzeramaiscena + 1.00;
+        	}else if(izmers==JOptionPane.NO_OPTION){
+        		dzeramaiscena = dzeramaiscena + 1.10;
+        	}	
+        	
+        	summa=tipacena+izmeracena+mercescena+dzeramaiscena;
         			
 			try{
 			
@@ -190,6 +209,7 @@ public class Abdulajevs_pica{
 				raksta.println("Jūsu picas cena: "+tipacena);
 				raksta.println("Сena par Jūsu izvēlēto picas izmēru izmēru: "+izmeracena);
 				raksta.println("Jūsu mērces cena: "+mercescena);
+				raksta.println("Jūsu dzēriena cena: "+dzeramaiscena);
 				raksta.println("Cena kopā: "+summa+" eiro");	
 			
 				JOptionPane.showMessageDialog(null, "Jūsu pasūtījums tiek saņemts veiksmīgi!", "Paldies par pasūtījumu!", JOptionPane.WARNING_MESSAGE);
