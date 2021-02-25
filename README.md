@@ -20,7 +20,7 @@ informāciju tā ir ērta un viegli sapratama. Ar šo programmu var:
 -  [x] Ievietot task list
 -  [x] Ievietot attēlus un emociju ikonus
 -  [x] Veikt izstrādātās picērijas programmas izgrūšanu (push) uz GitHub krātuvi
--  [ ] Programmu lokāli papildināt ar nelielu jaunu funkcionalitāti
--  [ ] Atkārtoti veikt izgrūšanu uz GitHub krātuvi
+-  [x] Programmu lokāli papildināt ar nelielu jaunu funkcionalitāti
+-  [x] Atkārtoti veikt izgrūšanu uz GitHub krātuvi
 
 
